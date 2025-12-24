@@ -32,18 +32,36 @@
   <p class="text-lg leading-relaxed">Passionate developer with expertise in HTML, SQL, JS, Python, Networking, PowerBI and many more.</p>
 </section>
 
-<h2>Ask about my website</h2>
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
 
-<input
-  type="text"
-  id="questionInput"
-  placeholder="Type a question..."
-  style="width: 300px;"
-/>
+      <h3 class="mb-3 text-center">Ask about my website</h3>
 
-<button id="askButton">Ask</button>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          id="questionInput"
+          class="form-control"
+          placeholder="Ask about my experience, skills, or projects..."
+        />
+        <button class="btn btn-primary" id="askButton">
+          Ask
+        </button>
+      </div>
 
-<pre id="responseOutput" style="margin-top: 1em;"></pre>
+      <div
+        id="responseOutput"
+        class="border rounded p-3 bg-light"
+        style="min-height: 120px; white-space: pre-wrap;"
+      >
+        <span class="text-muted">The answer will appear here…</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 <section id="portfolio" class="bg-white py-12">
   <div class="max-w-7xl mx-auto px-4">
@@ -125,7 +143,8 @@
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ question })
+        body: JSON.stringify({ question }),
+        mode: 'cors'
       });
 
       const data = await response.json();
