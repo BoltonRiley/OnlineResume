@@ -33,37 +33,35 @@
 </section>
 
 
-<section id="Ask a Question" lass="max-w-4xl mx-auto px-4 py-12">
-  <h3 class="text-3xl font-semibold mb-4">Ask Me Something</h3>
-<div class="container my-4">
-  <div class="row justify-content-center">
-    <div class="col-md-8 col-lg-6">
+<section id="ask" class="max-w-3xl mx-auto px-4 py-8">
+  <h3 class="text-2xl font-semibold mb-4 text-center">
+    Ask Me Something
+  </h3>
 
-      <h3 class="mb-3 text-center">Ask about my website</h3>
+  <div class="flex flex-col sm:flex-row gap-3 mb-4">
+    <input
+      type="text"
+      id="questionInput"
+      placeholder="Ask about my experience, skills, or projects…"
+      class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
 
-      <div class="input-group mb-3 text-center">
-        <input
-          type="text"
-          id="questionInput"
-          class="form-control"
-          placeholder="Ask about my experience, skills, or projects..."
-        />
-        <button class="btn btn-primary" id="askButton">
-          Ask
-        </button>
-      </div>
-
-      <div
-        id="responseOutput"
-        class="border rounded p-3 bg-light"
-        style="min-height: 120px; white-space: pre-wrap;"
-      >
-        <span class="text-muted">The answer will appear here…</span>
-      </div>
-
-    </div>
+    <button
+      id="askButton"
+      class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+    >
+      Submit
+    </button>
   </div>
-</div>
+
+  <div
+    id="responseOutput"
+    class="border border-gray-200 rounded-lg p-4 bg-gray-50 text-gray-800 leading-relaxed"
+  >
+    <span class="text-gray-500">
+      The response will appear here.
+    </span>
+  </div>
 </section>
 
 <section id="portfolio" class="bg-white py-12">
