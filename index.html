@@ -215,11 +215,11 @@
         mode: "cors"
       });
 
-      const data = await response.json();
-
+      const raw = await response.text();
+      console.log("RAW WORKER RESPONSE:", raw);
       // Preserve formatting and avoid double stringification
       output.style.whiteSpace = "pre-wrap";
-      output.textContent = data.answer;
+      output.textContent = raw;
 
     } catch (err) {
       output.textContent = "Error: " + err.message;
