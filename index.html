@@ -212,16 +212,21 @@
           "Content-Type": "application/json"
         },
         body: JSON.stringify({ question }),
-        mode: 'cors'
+        mode: "cors"
       });
 
       const data = await response.json();
-      output.textContent = JSON.stringify(data, null, 2);
+
+      // Preserve formatting and avoid double stringification
+      output.style.whiteSpace = "pre-wrap";
+      output.textContent = data.answer;
+
     } catch (err) {
       output.textContent = "Error: " + err.message;
     }
   });
 </script>
+
 
 </body>
 </html>
