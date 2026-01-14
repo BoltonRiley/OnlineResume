@@ -213,36 +213,6 @@
   </div>
 </section>
 
-<script>
-  const slider = document.getElementById("portfolio-slider");
-  const slides = slider.children;
-  let index = 0;
-  let slideWidth = slides[0].offsetWidth + 32; // card width + gap
-
-  let interval = setInterval(nextSlide, 2000);
-
-  function nextSlide() {
-    index++;
-    if (index >= slides.length) {
-      index = 0;
-    }
-    slider.style.transform = `translateX(-${index * slideWidth}px)`;
-  }
-
-  // Pause on hover
-  slider.addEventListener("mouseenter", () => clearInterval(interval));
-  slider.addEventListener("mouseleave", () => {
-    interval = setInterval(nextSlide, 3000);
-  });
-
-  // Recalculate width on resize
-  window.addEventListener("resize", () => {
-    slideWidth = slides[0].offsetWidth + 32;
-    slider.style.transform = `translateX(-${index * slideWidth}px)`;
-  });
-</script>
-
-
 <section data-ai id="resume" class="max-w-4xl mx-auto px-4 py-12">
   <h2 class="text-3xl font-semibold mb-4">Resume</h2>
   <h3 class="text-xl font-semibold mt-4">Skills</h3>
