@@ -23,6 +23,19 @@
   <h2 class="text-3xl font-semibold mb-4">Introduction</h2>
   <p class="text-lg leading-relaxed">The page under www.rileybolton.me is a combination of html, css and various add ons to allow a full deployment of my resume online as a website. In the future I am hopping to add an authenticator for my contact details, so they cannot be skimmed from the innitial webpage by bots as well as an AI question and answer tool that provides answers to questions about myself. </p>
 </section>
-<h3><!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b294f565a4b64185bb6f37f27d41c7ff"}'></script><!-- End Cloudflare Web Analytics --></h3>
+<h3>
+  <p>
+  Views in the last 30 days:
+  <strong><span id="views">Loading...</span></strong>
+  </p>
+
+  <script>
+  fetch("https://your-worker.your-domain.workers.dev")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("views").textContent = data.last30Days;
+    });
+  </script>
+</h3>
     
 </body>
