@@ -65,19 +65,37 @@
   </div>
 </section>
 
-<section data-ai id="portfolio" class="bg-white py-12">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl font-semibold mb-8">Portfolio</h2>
+<section data-ai id="portfolio" class="py-12 bg-white">
+  <div class="container mx-auto">
 
     <!-- Slider Wrapper -->
     <div class="relative overflow-hidden">
+
+      <!-- Left Arrow -->
+      <button
+        id="slider-left"
+        class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow hover:bg-gray-700 z-10"
+        aria-label="Scroll left"
+      >
+        &#10094;
+      </button>
+
+      <!-- Right Arrow -->
+      <button
+        id="slider-right"
+        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow hover:bg-gray-700 z-10"
+        aria-label="Scroll right"
+      >
+        &#10095;
+      </button>
+
       <!-- Slider Track -->
       <div
         id="portfolio-slider"
-        class="flex gap-8 transition-transform duration-700 ease-in-out z-index: 1;"
+        class="flex gap-8 transition-transform duration-500 ease-in-out"
       >
         <!-- Power BI Project Card -->
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4 z-index: 1;">
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4">
           <img src="assets/images/PowerBI.jpg" alt="PowerBI" class="rounded mb-4" />
           <h3 class="text-xl font-bold mb-2">PowerBI</h3>
           <p>
@@ -89,7 +107,7 @@
         </div>
 
         <!-- Website Project Card -->
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4 z-index: 1;">
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4">
           <img src="assets/images/website.jpg" alt="This web page" class="rounded mb-4" />
           <h3 class="text-xl font-bold mb-2">This Web Page</h3>
           <p>
@@ -101,31 +119,9 @@
         </div>
 
         <!-- Choo Brew Coffee -->
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4 z-index: 1;">
-          <img src="assets/images/CoffeeShop.jpg" alt="Choo Brew Coffee" class="rounded mb-4" />
-          <h3 class="text-xl font-bold mb-2">Choo Brew Coffee</h3>
-          <p>
-            Living in Melbourne, I started a small coffee shop.
-            Click
-            <a class="text-blue-600 hover:underline" href="choobrewcoffee/">here</a>
-            to find out more.
-          </p>
-        </div>
-        <!-- POS Improvements Card -->
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4 z-index: 1;">
-          <img src="assets/images/EFTPOS Automation.png" alt="POS Improvements" class="rounded mb-4" />
-          <h3 class="text-xl font-bold mb-2">POS Improvements</h3>
-          <p>
-            Improved POS infrastructure at Marvel Stadium. 
-            Click
-            <a class="text-blue-600 hover:underline" href="posimprovements/">here</a>
-            to find out more.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4">
+          <
+
 
 <section id="Interests and Hobbies" class="bg-white py-12">
   <div class="max-w-7xl mx-auto px-4">
