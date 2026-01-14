@@ -48,7 +48,7 @@ function getVisitorId() {
 
 const visitorId = getVisitorId();
 
-fetch("https://viewcount.rileybolton6.workers.dev?uid=" + visitorId)
+fetch("https://viewcount.rileybolton6.workers.dev/?uid=" + visitorId)
   .then(res => res.json())
   .then(data => {
     document.getElementById("views").textContent = data.last30Days;
