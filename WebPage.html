@@ -21,12 +21,15 @@
 
 <section data-ai id="Introduction" class="max-w-4xl mx-auto px-4 py-12">
   <h2 class="text-3xl font-semibold mb-4">Introduction</h2>
-  <p class="text-lg leading-relaxed">The page under www.rileybolton.me is a combination of html, css and various add ons to allow a full deployment of my resume online as a website. In the future I am hopping to add an authenticator for my contact details, so they cannot be skimmed from the innitial webpage by bots as well as an AI question and answer tool that provides answers to questions about myself. </p>
+  <p class="text-lg leading-relaxed">To create this page I have purchased a domain, created some content using html and js on a codespace page, set up the DNS under Cloudflare and linked multiple workers and backend interfaces to build a fully functioning and interactive website.</p>
 </section>
-<h3>
-<p>Total page views (30 days): <span id="views">Loading...</span></p>
-<p>Unique visitors (30 days): <span id="unique">Loading...</span></p>
 
+<section data-ai id="Analytics" class="max-w-4xl mx-auto px-4 py-12">
+  <h2 class="text-3xl font-semibold mb-4">Analytics</h2>
+  <p class="text-lg leading-relaxed">I used a worker to send a unique ID and timestamp to a KV storage on cloudflare. The same worker then responds with a count of page refreshes or views as well as unique user visits based on the last 30 days.</p>
+  <p>Total page views (30 days): <span id="views">Loading...</span></p>
+  <p>Unique visitors (30 days): <span id="unique">Loading...</span></p>
+</section>
 
   <script>
   fetch("https://viewcount.rileybolton6.workers.dev/")
