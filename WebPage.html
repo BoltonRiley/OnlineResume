@@ -24,10 +24,9 @@
   <p class="text-lg leading-relaxed">The page under www.rileybolton.me is a combination of html, css and various add ons to allow a full deployment of my resume online as a website. In the future I am hopping to add an authenticator for my contact details, so they cannot be skimmed from the innitial webpage by bots as well as an AI question and answer tool that provides answers to questions about myself. </p>
 </section>
 <h3>
-  <p>
-  Views in the last 30 days:
-  <strong><span id="views">Loading...</span></strong>
-  </p>
+<p>Total page views (30 days): <span id="views">Loading...</span></p>
+<p>Unique visitors (30 days): <span id="unique">Loading...</span></p>
+
 
   <script>
   fetch("https://viewcount.rileybolton6.workers.dev/")
@@ -37,5 +36,25 @@
     });
   </script>
 </h3>
-    
+ <script>
+function getVisitorId() {
+  let uid = localStorage.getItem("visitor_id");
+  if (!uid) {
+    uid = crypto.randomUUID();  // modern browsers support this
+    localStorage.setItem("visitor_id", uid);
+  }
+  return uid;
+}
+
+const visitorId = getVisitorId();
+
+fetch("https://your-worker.YOURDOMAIN.workers.dev?uid=" + visitorId)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("views").textContent = data.last30Days;
+    document.getElementById("unique").textContent = data.last30DaysUnique;
+  })
+  .catch(err => console.error("Worker fetch error:", err));
+</script>
+   
 </body>

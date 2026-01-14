@@ -269,7 +269,26 @@
     }
   });
 </script>
+<script>
+function getVisitorId() {
+  let uid = localStorage.getItem("visitor_id");
+  if (!uid) {
+    uid = crypto.randomUUID();  // modern browsers support this
+    localStorage.setItem("visitor_id", uid);
+  }
+  return uid;
+}
 
+const visitorId = getVisitorId();
+
+fetch("https://viewcount.rileybolton6.workers.dev?uid=" + visitorId)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("views").textContent = data.last30Days;
+    document.getElementById("unique").textContent = data.last30DaysUnique;
+  })
+  .catch(err => console.error("Worker fetch error:", err));
+</script>
 
 </body>
 </html>
