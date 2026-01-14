@@ -120,7 +120,55 @@
 
         <!-- Choo Brew Coffee -->
         <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4">
-          <
+          <img src="assets/images/CoffeeShop.jpg" alt="Choo Brew Coffee" class="rounded mb-4" />
+          <h3 class="text-xl font-bold mb-2">Choo Brew Coffee</h3>
+          <p>
+            Living in Melbourne, I started a small coffee shop.
+            Click
+            <a class="text-blue-600 hover:underline" href="choobrewcoffee/">here</a>
+            to find out more.
+          </p>
+        </div>
+
+        <!-- POS Improvements Card -->
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4">
+          <img src="assets/images/EFTPOS Automation.png" alt="POS Improvements" class="rounded mb-4" />
+          <h3 class="text-xl font-bold mb-2">POS Improvements</h3>
+          <p>
+            Improved POS infrastructure at Marvel Stadium. 
+            Click
+            <a class="text-blue-600 hover:underline" href="posimprovements/">here</a>
+            to find out more.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slider Script -->
+<script>
+  const slider = document.getElementById("portfolio-slider");
+  const leftBtn = document.getElementById("slider-left");
+  const rightBtn = document.getElementById("slider-right");
+
+  const scrollAmount = 350; // adjust depending on card width
+
+  leftBtn.addEventListener("click", () => {
+    slider.scrollBy({
+      left: -scrollAmount,
+      behavior: "smooth"
+    });
+  });
+
+  rightBtn.addEventListener("click", () => {
+    slider.scrollBy({
+      left: scrollAmount,
+      behavior: "smooth"
+    });
+  });
+</script>
+
 
 
 <section id="Interests and Hobbies" class="bg-white py-12">
