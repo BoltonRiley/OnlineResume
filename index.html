@@ -5,269 +5,220 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Riley Bolton - Online Resume</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b294f565a4b64185bb6f37f27d41c7ff"}'></script><!-- End Cloudflare Web Analytics -->
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "b294f565a4b64185bb6f37f27d41c7ff"}'>
+  </script>
 </head>
+
 <body class="bg-gray-50 text-gray-900 select-none caret-transparent">
 
-<nav class="bg-blue-600 fixed top-0 z-index: 9999 width: 100% transform: translateZ(0);">
+<!-- NAV -->
+<nav class="fixed top-0 left-0 w-full bg-blue-600 z-[9999]">
   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
     <a href="#" class="text-white text-2xl font-bold">Riley Bolton</a>
     <div class="space-x-6">
       <a href="#about" class="text-white hover:underline">About</a>
       <a href="#portfolio" class="text-white hover:underline">Portfolio</a>
       <a href="#Interests and Hobbies" class="text-white hover:underline">Interests</a>
-      <a href="#resume" class="text-white hover:underline">Resume</a>
       <a href="#contact" class="text-white hover:underline">Contact</a>
     </div>
   </div>
 </nav>
 
+<!-- PAGE OFFSET -->
+<main class="pt-20">
+
 <header class="text-center py-16 bg-white shadow">
   <h1 class="text-5xl font-extrabold mb-4">Hi, I'm Riley Bolton</h1>
   <p class="text-xl mb-8">I am an aspiring Information and Technology Professional.</p>
-  <img src="assets/images/Riley1.jpg" alt="ProfilePhoto" class="mx-auto rounded-full w-40 h-40 object-cover" />
+  <img src="assets/images/Riley1.jpg" alt="ProfilePhoto"
+       class="mx-auto rounded-full w-40 h-40 object-cover" />
 </header>
 
 <section data-ai id="about" class="max-w-4xl mx-auto px-4 py-12">
   <h2 class="text-3xl font-semibold mb-4">About Me</h2>
-  <p class="text-lg leading-relaxed">I’m a Melbourne‑raised technology professional who combines strong technical capability with a collaborative, people‑first approach. Whether I’m building solutions at work or playing basketball on the weekends, I thrive in team environments where communication, adaptability, and problem‑solving matter. Outside of tech, you’ll usually find me at the gym, enjoying a good coffee, unwinding with video games, or sharing an occasional beer with friends. I bring curiosity, discipline, and a balanced perspective to everything I do, helping me connect with others and deliver high‑quality results.  </p> 
+  <p class="text-lg leading-relaxed">
+    I’m a Melbourne-raised technology professional who combines strong technical
+    capability with a collaborative, people-first approach. Whether I’m building
+    solutions at work or playing basketball on the weekends, I thrive in team
+    environments where communication, adaptability, and problem-solving matter.
+    Outside of tech, you’ll usually find me at the gym, enjoying a good coffee,
+    unwinding with video games, or sharing an occasional beer with friends.
+  </p>
 </section>
 
-
 <section id="ask" class="max-w-3xl mx-auto px-4 py-8">
-  <h3 class="text-2xl font-semibold mb-4 text-center">
-    Ask Me Something
-  </h3>
+  <h3 class="text-2xl font-semibold mb-4 text-center">Ask Me Something</h3>
 
   <div class="flex flex-col sm:flex-row gap-3 mb-4">
     <input
       type="text"
       id="questionInput"
       placeholder="Ask about my experience, skills, or projects…"
-      class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 select-text caret-auto"
+      class="flex-1 px-4 py-3 border border-gray-300 rounded-lg
+             focus:outline-none focus:ring-2 focus:ring-blue-500
+             select-text caret-auto"
     />
-
     <button
       id="askButton"
-      class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
-    >
+      class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg
+             hover:bg-blue-700 transition">
       Submit
     </button>
   </div>
 
-  <div
-    id="responseOutput"
-    class="border border-gray-200 rounded-lg p-4 bg-gray-50 text-gray-800 leading-relaxed whitespace-pre-wrap"
-  >
-    <span class="text-gray-500">
-      The response will appear here.
-    </span>
+  <div id="responseOutput"
+       class="border border-gray-200 rounded-lg p-4 bg-gray-50
+              text-gray-800 leading-relaxed whitespace-pre-wrap">
+    <span class="text-gray-500">The response will appear here.</span>
   </div>
 </section>
 
+<!-- PORTFOLIO -->
 <section data-ai id="portfolio" class="py-12 bg-white">
-  <div class="container mx-auto">
+  <div class="container mx-auto px-4">
 
-    <!-- Slider Wrapper -->
-    <div class="relative overflow-hidden">
+    <!-- SLIDER WRAPPER -->
+    <div class="relative">
 
-      <!-- Left Arrow -->
+      <!-- LEFT ARROW -->
       <button
         id="slider-left"
-        class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow hover:bg-gray-700 z-10"
-        aria-label="Scroll left"
-      >
+        class="absolute left-2 top-1/2 -translate-y-1/2
+               bg-gray-800 text-white p-2 rounded-full
+               shadow hover:bg-gray-700 z-20"
+        aria-label="Scroll left">
         &#10094;
       </button>
 
-      <!-- Right Arrow -->
+      <!-- RIGHT ARROW -->
       <button
         id="slider-right"
-        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow hover:bg-gray-700 z-10"
-        aria-label="Scroll right"
-      >
+        class="absolute right-2 top-1/2 -translate-y-1/2
+               bg-gray-800 text-white p-2 rounded-full
+               shadow hover:bg-gray-700 z-20"
+        aria-label="Scroll right">
         &#10095;
       </button>
 
-      <!-- Slider Track -->
+      <!-- SLIDER TRACK -->
       <div
-        id="portfolio-slider"
-        class="flex gap-8 transition-transform duration-500 ease-in-out"
-      >
-        <!-- Power BI Project Card -->
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/PowerBI.jpg" alt="PowerBI" class="rounded mb-4" />
+        id="portfolio-track"
+        class="flex gap-8 overflow-x-auto scroll-smooth w-full py-4 px-12">
+
+        <!-- Power BI -->
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px]
+                    bg-gray-100 rounded-lg shadow p-4">
+          <img src="assets/images/PowerBI.jpg" class="rounded mb-4" />
           <h3 class="text-xl font-bold mb-2">PowerBI</h3>
           <p>
             Whilst at Marvel Stadium, I built multiple pipelines and a PowerBI dashboard.
-            Click
-            <a class="text-blue-600 hover:underline" href="powerbi/">here</a>
-            to find out more.
+            Click <a class="text-blue-600 hover:underline" href="powerbi/">here</a>.
           </p>
         </div>
 
-        <!-- Website Project Card -->
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/website.jpg" alt="This web page" class="rounded mb-4" />
+        <!-- Website -->
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px]
+                    bg-gray-100 rounded-lg shadow p-4">
+          <img src="assets/images/website.jpg" class="rounded mb-4" />
           <h3 class="text-xl font-bold mb-2">This Web Page</h3>
           <p>
             This web page is a project that I am continuously updating.
-            Click
-            <a class="text-blue-600 hover:underline" href="webpage/">here</a>
-            to find out more.
+            Click <a class="text-blue-600 hover:underline" href="webpage/">here</a>.
           </p>
         </div>
 
-        <!-- Choo Brew Coffee -->
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/CoffeeShop.jpg" alt="Choo Brew Coffee" class="rounded mb-4" />
+        <!-- Coffee -->
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px]
+                    bg-gray-100 rounded-lg shadow p-4">
+          <img src="assets/images/CoffeeShop.jpg" class="rounded mb-4" />
           <h3 class="text-xl font-bold mb-2">Choo Brew Coffee</h3>
           <p>
             Living in Melbourne, I started a small coffee shop.
-            Click
-            <a class="text-blue-600 hover:underline" href="choobrewcoffee/">here</a>
-            to find out more.
+            Click <a class="text-blue-600 hover:underline" href="choobrewcoffee/">here</a>.
           </p>
         </div>
 
-        <!-- POS Improvements Card -->
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/EFTPOS Automation.png" alt="POS Improvements" class="rounded mb-4" />
+        <!-- POS -->
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px]
+                    bg-gray-100 rounded-lg shadow p-4">
+          <img src="assets/images/EFTPOS Automation.png" class="rounded mb-4" />
           <h3 class="text-xl font-bold mb-2">POS Improvements</h3>
           <p>
-            Improved POS infrastructure at Marvel Stadium. 
-            Click
-            <a class="text-blue-600 hover:underline" href="posimprovements/">here</a>
-            to find out more.
+            Improved POS infrastructure at Marvel Stadium.
+            Click <a class="text-blue-600 hover:underline" href="posimprovements/">here</a>.
           </p>
         </div>
+
       </div>
     </div>
   </div>
 </section>
 
-<!-- Slider Script -->
-<script>
-  const slider = document.getElementById("portfolio-slider");
-  const leftBtn = document.getElementById("slider-left");
-  const rightBtn = document.getElementById("slider-right");
-
-  const scrollAmount = 350; // adjust depending on card width
-
-  leftBtn.addEventListener("click", () => {
-    slider.scrollBy({
-      left: -scrollAmount,
-      behavior: "smooth"
-    });
-  });
-
-  rightBtn.addEventListener("click", () => {
-    slider.scrollBy({
-      left: scrollAmount,
-      behavior: "smooth"
-    });
-  });
-</script>
-
-
-
+<!-- INTERESTS -->
 <section id="Interests and Hobbies" class="bg-white py-12">
   <div class="max-w-7xl mx-auto px-4">
     <h2 class="text-3xl font-semibold mb-8">Interests</h2>
+
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <!-- Sports -->
-        <div class="bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/PowerBI.jpg" alt="Sports" class="rounded mb-4" />
-          <h3 class="text-xl font-bold mb-2">Sports</h3>
-          <p>
-            I enjoy playing basketball and going to the gym in my spare time.
-            Click
-            <a class="text-blue-600 hover:underline" href="sports/">here</a>
-            to find out more.
-          </p>
-        </div>
+      <div class="bg-gray-100 rounded-lg shadow p-4">
+        <img src="assets/images/PowerBI.jpg" class="rounded mb-4" />
+        <h3 class="text-xl font-bold mb-2">Sports</h3>
+        <p>
+          I enjoy playing basketball and going to the gym.
+          <a class="text-blue-600 hover:underline" href="sports/">More</a>
+        </p>
+      </div>
 
-        <!-- Travel -->
-        <div class="bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/website.jpg" alt="Travel" class="rounded mb-4" />
-          <h3 class="text-xl font-bold mb-2">Travel</h3>
-          <p>
-            I enjoy traveling and exploring new places.
-            Click
-            <a class="text-blue-600 hover:underline" href="travel/">here</a>
-            to find out more.
-          </p>
-        </div>
+      <div class="bg-gray-100 rounded-lg shadow p-4">
+        <img src="assets/images/website.jpg" class="rounded mb-4" />
+        <h3 class="text-xl font-bold mb-2">Travel</h3>
+        <p>
+          I enjoy traveling and exploring new places.
+          <a class="text-blue-600 hover:underline" href="travel/">More</a>
+        </p>
+      </div>
 
-        <!-- Board/Video Games -->
-        <div class="bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/CoffeeShop.jpg" alt="Games" class="rounded mb-4" />
-          <h3 class="text-xl font-bold mb-2">Board/Video Games</h3>
-          <p>
-            I enjoy relaxing and playing board games and video games with friends in my spare time.
-            Click
-            <a class="text-blue-600 hover:underline" href="games/">here</a>
-            to find out more.
-          </p>
-        </div>
+      <div class="bg-gray-100 rounded-lg shadow p-4">
+        <img src="assets/images/CoffeeShop.jpg" class="rounded mb-4" />
+        <h3 class="text-xl font-bold mb-2">Games</h3>
+        <p>
+          I enjoy relaxing with board and video games.
+          <a class="text-blue-600 hover:underline" href="games/">More</a>
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="contact" class="bg-white py-12">
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-semibold mb-4">Contact Me</h2>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/riley-bolton/" class="text-blue-600 hover:underline" target="https://www.linkedin.com/in/riley-bolton/">Riley Bolton</a></p>
-  </div>
+<section id="contact" class="bg-white py-12 text-center">
+  <h2 class="text-3xl font-semibold mb-4">Contact Me</h2>
+  <a class="text-blue-600 hover:underline"
+     href="https://www.linkedin.com/in/riley-bolton/" target="_blank">
+     LinkedIn
+  </a>
 </section>
+
+</main>
+
+<!-- SLIDER SCRIPT -->
 <script>
-  const workerUrl = "https://crimson-surf-212a.rileybolton6.workers.dev";
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("portfolio-track");
+  const leftBtn = document.getElementById("slider-left");
+  const rightBtn = document.getElementById("slider-right");
+  const scrollAmount = 350;
 
-  document.getElementById("askButton").addEventListener("click", async () => {
-    const question = document.getElementById("questionInput").value;
-    const output = document.getElementById("responseOutput");
+  leftBtn.addEventListener("click", () =>
+    slider.scrollBy({ left: -scrollAmount, behavior: "smooth" })
+  );
 
-    output.textContent = "Sending question...";
-
-    try {
-      const response = await fetch(workerUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ question }),
-        mode: "cors"
-      });
-
-      const raw = await response.text();
-      console.log("RAW WORKER RESPONSE:", raw);
-      // Preserve formatting and avoid double stringification
-      output.style.whiteSpace = "pre-wrap";
-      output.textContent = raw;
-
-    } catch (err) {
-      output.textContent = "Error: " + err.message;
-    }
-  });
-</script>
-<script>
-function getVisitorId() {
-  let uid = localStorage.getItem("visitor_id");
-  if (!uid) {
-    uid = crypto.randomUUID();  // modern browsers support this
-    localStorage.setItem("visitor_id", uid);
-  }
-  return uid;
-}
-
-const visitorId = getVisitorId();
-
-fetch("https://viewcount.rileybolton6.workers.dev?uid=" + visitorId)
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById("views").textContent = data.last30Days;
-    document.getElementById("unique").textContent = data.last30DaysUnique;
-  })
-  .catch(err => console.error("Worker fetch error:", err));
+  rightBtn.addEventListener("click", () =>
+    slider.scrollBy({ left: scrollAmount, behavior: "smooth" })
+  );
+});
 </script>
 
 </body>
