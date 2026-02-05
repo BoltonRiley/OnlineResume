@@ -209,86 +209,78 @@ document.addEventListener("DOMContentLoaded", () => {
   const slider = document.getElementById("portfolio-track");
   const leftBtn = document.getElementById("slider-left");
   const rightBtn = document.getElementById("slider-right");
-  const scrollAmount = 350;
 
-  leftBtn.addEventListener("click", () =>
-    slider.scrollBy({ left: -scrollAmount, behavior: "smooth" })
-  );
+  if (!slider || !leftBtn || !rightBtn) return;
 
-  rightBtn.addEventListener("click", () =>
-    slider.scrollBy({ left: scrollAmount, behavior: "smooth" })
-  );
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  /* ---------------------------
-     ASK ME WORKER
-  ---------------------------- */
-  const workerUrl = "https://crimson-surf-212a.rileybolton6.workers.dev";
+  const cards = slider.children;
+  if (!cards.length) return;
 
-  const askButton = document.getElementById("askButton");
-  const questionInput = document.getElementById("questionInput");
-  const responseOutput = document.getElementById("responseOutput");
+  // Measure one card + gap
+  const cardStyle = getComputedStyle(cards[0]);
+  const cardWidth =
+    cards[0].offsetWidth +
+    parseInt(cardStyle.marginRight || 0);
 
-  if (askButton && questionInput && responseOutput) {
-    askButton.addEventListener("click", async () => {
-      const question = questionInput.value.trim();
+  let currentIndex = 0;
 
-      if (!question) {
-        responseOutput.textContent = "Please enter a question first.";
-        return;
-      }
-
-      responseOutput.style.whiteSpace = "pre-wrap";
-      responseOutput.textContent = "Sending question...";
-
-      try {
-        const response = await fetch(workerUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ question }),
-          mode: "cors"
-        });
-
-        const raw = await response.text();
-        console.log("RAW WORKER RESPONSE:", raw);
-
-        responseOutput.textContent = raw;
-      } catch (err) {
-        responseOutput.textContent = "Error: " + err.message;
-      }
+  function scrollToIndex(index) {
+    slider.scrollTo({
+      left: index * cardWidth,
+      behavior: "smooth"
     });
   }
 
-  /* ---------------------------
-     VISITOR COUNT WORKER
-  ---------------------------- */
-  function getVisitorId() {
-    let uid = localStorage.getItem("visitor_id");
-    if (!uid) {
-      uid = crypto.randomUUID();
-      localStorage.setItem("visitor_id", uid);
+  rightBtn.addEventListener("click", () => {
+    currentIndex++;
+
+    // LOOP BACK TO START
+    if (currentIndex >= cards.length) {
+      currentIndex = 0;
     }
-    return uid;
-  }
 
-  const visitorId = getVisitorId();
+    scrollToIndex(currentIndex);
+  });
 
-  fetch(`https://viewcount.rileybolton6.workers.dev?uid=${visitorId}`)
-    .then(res => res.json())
-    .then(data => {
-      const viewsEl = document.getElementById("views");
-      const uniqueEl = document.getElementById("unique");
+  leftBtn.addEventListener("click", () => {
+    currentIndex--;
 
-      if (viewsEl) viewsEl.textContent = data.last30Days;
-      if (uniqueEl) uniqueEl.textContent = data.last30DaysUnique;
-    })
-    .catch(err => console.error("Worker fetch error:", err));
+    // LOOP TO END
+    if (currentIndex < 0) {
+      currentIndex = cards.length - 1;
+    }
+
+    scrollToIndex(currentIndex);
+  });
 });
 </script>
+
+<script>
+const workerUrl = "https://winter-lab-01ce.rileybolton6.workers.dev";
+
+document.getElementById("askButton").addEventListener("click", async () => {
+  const question = document.getElementById("questionInput").value;
+  const output = document.getElementById("responseOutput");
+
+  output.textContent = "";
+  output.style.whiteSpace = "pre-wrap";
+
+  const response = await fetch(workerUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question })
+  });
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+
+  while (true) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    output.textContent += decoder.decode(value);
+  }
+});
+</script>
+
 
 </body>
 </html>
