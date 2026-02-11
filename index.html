@@ -40,27 +40,26 @@
 <section data-ai id="about" class="max-w-4xl mx-auto px-4 py-12">
   <h2 class="text-3xl font-semibold mb-4">About Me</h2>
   <p class="text-lg leading-relaxed">
-    I’m a Melbourne-raised technology professional who combines strong technical
+    I’m a technology professional who combines strong technical
     capability with a collaborative, people-first approach. Whether I’m building
-    solutions at work or playing basketball on the weekends, I thrive in team
+    solutions at work or playing basketball, I thrive in team
     environments where communication, adaptability, and problem-solving matter.
-    Outside of tech, you’ll usually find me at the gym, enjoying a good coffee,
+    Outside of work, you’ll find me at the gym, enjoying brunch with my wife,
     unwinding with video games, or sharing an occasional beer with friends.
   </p>
 </section>
 
-<section id="ask" class="max-w-3xl mx-auto px-4 py-8">
+<section id="ask" class="max-w-4xl mx-auto px-4 py-8">
   <h3 class="text-2xl font-semibold mb-4 text-center">Ask Me Something</h3>
 
   <div class="flex flex-col sm:flex-row gap-3 mb-4">
     <input
       type="text"
       id="questionInput"
-      placeholder="Ask about my experience, skills, or projects…"
+      placeholder="Ask me 'What languages do you know?' or 'Why would you be a good project manager?'"
       class="flex-1 px-4 py-3 border border-gray-300 rounded-lg
              focus:outline-none focus:ring-2 focus:ring-blue-500
-             select-text caret-auto"
-    />
+             select-text caret-auto"/>
     <button
       id="askButton"
       class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg
@@ -115,7 +114,7 @@
           <h3 class="text-xl font-bold mb-2">PowerBI</h3>
           <p>
             Whilst at Marvel Stadium, I built multiple pipelines and a PowerBI dashboard.
-            Click <a class="text-blue-600 hover:underline" href="powerbi/">here</a>.
+            Click <button class="text-blue-600 hover:underline" onclick="showDetail('detail-powerbi')">here</button>.
           </p>
         </div>
 
@@ -126,7 +125,7 @@
           <h3 class="text-xl font-bold mb-2">This Web Page</h3>
           <p>
             This web page is a project that I am continuously updating.
-            Click <a class="text-blue-600 hover:underline" href="webpage/">here</a>.
+            Click <button class="text-blue-600 hover:underline" onclick="showDetail('detail-website')">here</button>.
           </p>
         </div>
 
@@ -137,7 +136,7 @@
           <h3 class="text-xl font-bold mb-2">Choo Brew Coffee</h3>
           <p>
             Living in Melbourne, I started a small coffee shop.
-            Click <a class="text-blue-600 hover:underline" href="choobrewcoffee/">here</a>.
+            Click <button class="text-blue-600 hover:underline" onclick="showDetail('detail-coffee')">here</button>.
           </p>
         </div>
 
@@ -148,50 +147,84 @@
           <h3 class="text-xl font-bold mb-2">POS Improvements</h3>
           <p>
             Improved POS infrastructure at Marvel Stadium.
-            Click <a class="text-blue-600 hover:underline" href="posimprovements/">here</a>.
+            Click <button class="text-blue-600 hover:underline" onclick="showDetail('detail-pos')">here</button>.
           </p>
         </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INTERESTS -->
-<section id="Interests and Hobbies" class="bg-white py-12">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl font-semibold mb-8">Interests</h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <div class="bg-gray-100 rounded-lg shadow p-4">
-        <img src="assets/images/PowerBI.jpg" class="rounded mb-4" />
-        <h3 class="text-xl font-bold mb-2">Sports</h3>
-        <p>
-          I enjoy playing basketball and going to the gym.
-          <a class="text-blue-600 hover:underline" href="sports/">More</a>
-        </p>
-      </div>
-
-      <div class="bg-gray-100 rounded-lg shadow p-4">
-        <img src="assets/images/website.jpg" class="rounded mb-4" />
-        <h3 class="text-xl font-bold mb-2">Travel</h3>
-        <p>
-          I enjoy traveling and exploring new places.
-          <a class="text-blue-600 hover:underline" href="travel/">More</a>
-        </p>
-      </div>
-
-      <div class="bg-gray-100 rounded-lg shadow p-4">
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px]
+                    bg-gray-100 rounded-lg shadow p-4">
+          <img src="assets/images/PowerBI.jpg" class="rounded mb-4" />
+          <h3 class="text-xl font-bold mb-2">Sports</h3>
+          <p>
+            I enjoy playing basketball and going to the gym.
+            <button class="text-blue-600 hover:underline" onclick="showDetail('detail-sports')">More</button>
+          </p>
+        </div>
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4">
+          <img src="assets/images/website.jpg" class="rounded mb-4" />
+          <h3 class="text-xl font-bold mb-2">Travel</h3>
+          <p>
+            I enjoy traveling and exploring new places.
+            <button class="text-blue-600 hover:underline" onclick="showDetail('detail-travel')">More</button>
+          </p>
+        </div>
+            <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px]
+                    bg-gray-100 rounded-lg shadow p-4">
         <img src="assets/images/CoffeeShop.jpg" class="rounded mb-4" />
         <h3 class="text-xl font-bold mb-2">Games</h3>
         <p>
           I enjoy relaxing with board and video games.
-          <a class="text-blue-600 hover:underline" href="games/">More</a>
+          <button class="text-blue-600 hover:underline" onclick="showDetail('detail-games')">More</button>
         </p>
+      </div>
       </div>
     </div>
   </div>
+
 </section>
+<section id="detail-content" class="max-w-4xl mx-auto px-4 py-12 hidden">
+  <div id="detail-powerbi" class="detail-section hidden">
+    <h2 class="text-3xl font-semibold mb-4">Power BI Project</h2>
+    <p>Content here lots and lots of content about the Power BI project.</p>
+  </div>
+
+  <div id="detail-website" class="detail-section hidden">
+    <h2 class="text-3xl font-semibold mb-4">This Website</h2>
+    <p>  
+    <p>Congratulations, you are the <span id="unique">(Loading...)</span> unique visitor in the last 30 days!</p>
+    <p>Over the same time, there has been a total of <span id="views">(Loading...)</span> reloads on this page.</p>
+
+  </div>
+
+  <div id="detail-coffee" class="detail-section hidden">
+    <h2 class="text-3xl font-semibold mb-4">Choo Brew Coffee</h2>
+    <p>Content here</p>
+  </div>
+
+  <div id="detail-pos" class="detail-section hidden">
+    <h2 class="text-3xl font-semibold mb-4">POS Improvements</h2>
+    <p>I led several POS improvements focused on reliability, efficiency, and scalability. These included implementing automated restart handling through Windows Task Manager to ensure updates and application recovery occurred correctly, and introducing consistent naming conventions across POS terminals, locations, and keyboards to improve searchability and ongoing maintenance. I also replaced paper-based communications with Microsoft Sway, giving casual staff easy access to SOPs, event details, and operational updates.</p>
+    <p>In addition, I helped roll out kiosks, self-order, self-checkout POS systems, and autonomous outlets to improve checkout speed and reduce labour requirements. A major improvement was the development of an automated POS health-check system that performed comprehensive pre-event diagnostics and delivered reports automatically. This reduced pre-event checks from up to five staff over several hours to two staff for one hour, lowering operational overheads while allowing skilled staff to focus on higher-value technical work.</p>
+  </div>
+
+  </div>
+    <div id="detail-sports" class="detail-section hidden">
+    <h2 class="text-3xl font-semibold mb-4">Sports</h2>
+    <p>Content here</p>
+  </div>
+
+  <div id="detail-travel" class="detail-section hidden">
+    <h2 class="text-3xl font-semibold mb-4">Travel</h2>
+    <p>I’ve been fortunate to travel widely with both family and independently, experiencing a diverse range of cultures and landscapes. Early trips to France, China (including the Great Wall and Terracotta Warriors), Fiji, and Samoa sparked an appreciation for history, food, and cultural difference, while also offering early perspective on global privilege. As I grew older, travel became more independent and adventurous, from a solo trip to Queenstown, New Zealand—hiking Ben Lomond and bungee jumping—to living in Cambodia, where Koh Rong Sanloem remains one of my favourite places in the world.</p>
+    <p>More recent travel has focused on immersive, experience-driven adventures, including hiking the Inka Trail to Machu Picchu in Peru, exploring the wildlife of the Galápagos Islands in Ecuador, and eloping in Russia, with highlights such as Saint Petersburg and seeing the northern lights in Murmansk. Other memorable experiences include vineyards near Cape Town, volcano riding in Ubud, Bali, sunrise hot air balloons in Cappadocia, Turkey, standout food in Tbilisi, Georgia, coastal exploration in Cyprus, and snowboarding in Hakuba, Japan. Across all destinations, I’ve been most drawn to meaningful local experiences, food, nature, and shared cultural moments.</p>
+  </div>
+
+  <div id="detail-games" class="detail-section hidden">
+    <h2 class="text-3xl font-semibold mb-4">Games</h2>
+    <p>I’ve always been drawn to problem-solving, which naturally led to a long-standing interest in video games, board games, and interactive experiences. This interest has extended beyond playing into creating experiences for others, such as designing and hosting a multi-stage murder mystery event for friends and family. The event combined logic puzzles, physical activities, and narrative elements—including clues, red herrings, and themed challenges—and was successfully run multiple times for different groups.</p>
+    <p>This curiosity for how things work also carries into technology and game development. After selling my first business, Choo Brew Coffee, I reactivated my ABN in 2024 to start Density Games, where I began developing my own video games, including a simple RPG project. Alongside this, I enjoy both modern and classic board games such as Terraforming Mars, Heat, 500, and Settlers of Catan. I also enjoy hands-on technical projects, from experimenting with basic electronics to building and upgrading my own PC, and recently transitioning my home system to Linux.</p>
+  </div>
+</section>
+
 
 <section id="contact" class="bg-white py-12 text-center">
   <h2 class="text-3xl font-semibold mb-4">Contact Me</h2>
@@ -279,6 +312,58 @@ document.getElementById("askButton").addEventListener("click", async () => {
     output.textContent += decoder.decode(value);
   }
 });
+</script>
+
+<script>
+function showDetail(targetId) {
+  const detailContainer = document.getElementById("detail-content");
+  const detailSections = document.querySelectorAll(".detail-section");
+
+  if (!detailContainer) return;
+
+  // Show the container
+  detailContainer.classList.remove("hidden");
+
+  // Hide all sections
+  detailSections.forEach(section => {
+    section.classList.add("hidden");
+  });
+
+  // Show the selected section
+  const target = document.getElementById(targetId);
+  if (target) {
+    target.classList.remove("hidden");
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+</script>
+<script>
+fetch("https://viewcount.rileybolton6.workers.dev/")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("views").textContent = data.last30Days;
+  });
+</script>
+
+<script>
+function getVisitorId() {
+  let uid = localStorage.getItem("visitor_id");
+  if (!uid) {
+    uid = crypto.randomUUID();  // modern browsers support this
+    localStorage.setItem("visitor_id", uid);
+  }
+  return uid;
+}
+
+const visitorId = getVisitorId();
+
+fetch("https://viewcount.rileybolton6.workers.dev/?uid=" + visitorId)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("views").textContent = data.last30Days;
+    document.getElementById("unique").textContent = data.last30DaysUnique;
+  })
+  .catch(err => console.error("Worker fetch error:", err));
 </script>
 
 
