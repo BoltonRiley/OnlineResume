@@ -285,6 +285,7 @@
 </main>
 
 <!-- SLIDER SCRIPT -->
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.getElementById("portfolio-track");
@@ -293,47 +294,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!slider || !leftBtn || !rightBtn) return;
 
-  const cards = slider.children;
+  // If your cards have a class, prefer selecting by that (more robust than .children)
+  const cards = Array.from(slider.children);
   if (!cards.length) return;
 
-  // Measure one card + gap
-  const cardStyle = getComputedStyle(cards[0]);
-  const cardWidth =
-    cards[0].offsetWidth +
-    parseInt(cardStyle.marginRight || 0);
+  // Precompute left positions of each card relative to the slider
+  function getPositions() {
+    // offsetLeft is relative to offsetParent; for typical horizontal carousels this is fine.
+    // If you have nested offset contexts, you can use element.getBoundingClientRect()
+    // and normalize to slider.getBoundingClientRect().left instead.
+    return cards.map(card => card.offsetLeft);
+  }
 
-  let currentIndex = 0;
+  function scrollToX(x) {
+    slider.scrollTo({ left: x, behavior: "smooth" });
+  }
 
-  function scrollToIndex(index) {
-    slider.scrollTo({
-      left: index * cardWidth,
-      behavior: "smooth"
-    });
+  function getNextPosition() {
+    const positions = getPositions();
+    const current = slider.scrollLeft;
+    // Find first card strictly to the right of current
+    const next = positions.find(p => p > current + 1); // +1 tolerance for float rounding
+    return (next !== undefined) ? next : 0; // wrap to start
+  }
+
+  function getPrevPosition() {
+    const positions = getPositions();
+    const current = slider.scrollLeft;
+    // Find last card strictly to the left of current
+    const prev = [...positions].reverse().find(p => p < current - 1);
+    return (prev !== undefined) ? prev : positions[positions.length - 1]; // wrap to end
   }
 
   rightBtn.addEventListener("click", () => {
-    currentIndex++;
-
-    // LOOP BACK TO START
-    if (currentIndex >= cards.length) {
-      currentIndex = 0;
-    }
-
-    scrollToIndex(currentIndex);
+    scrollToX(getNextPosition());
   });
 
   leftBtn.addEventListener("click", () => {
-    currentIndex--;
-
-    // LOOP TO END
-    if (currentIndex < 0) {
-      currentIndex = cards.length - 1;
-    }
-
-    scrollToIndex(currentIndex);
+    scrollToX(getPrevPosition());
   });
 });
 </script>
+
 <!-- AI Question Script -->
 <script>
 const workerUrl = "https://winter-lab-01ce.rileybolton6.workers.dev";
@@ -381,7 +383,6 @@ function showDetail(targetId) {
   const target = document.getElementById(targetId);
   if (target) {
     target.classList.remove("hidden");
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
 </script>
