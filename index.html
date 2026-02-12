@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Riley Bolton - Online Resume</title>
 </head>
 
 <body class="bg-gray-50 text-gray-900 select-none caret-transparent">
+  <!-- View count script -->
+  <script>
+  fetch("https://viewcount.rileybolton6.workers.dev/")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("views").textContent = data.last30Days;
+    });
+  </script>
+  <!-- Visitor ID and unique count script -->
+  <script>
+  function getVisitorId() {
+    let uid = localStorage.getItem("visitor_id");
+    if (!uid) {
+      uid = crypto.randomUUID();  // modern browsers support this
+      localStorage.setItem("visitor_id", uid);
+    }
+    return uid;
+  }
 
+  const visitorId = getVisitorId();
+
+  fetch("https://viewcount.rileybolton6.workers.dev/?uid=" + visitorId)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("views").textContent = data.last30Days;
+      document.getElementById("unique").textContent = data.last30DaysUnique;
+    })
+    .catch(err => console.error("Worker fetch error:", err));
+  </script>
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "b294f565a4b64185bb6f37f27d41c7ff"}'>
+  </script>
 <!-- NAV -->
 <nav class="fixed top-0 left-0 w-full bg-blue-600 z-[9999]">
   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
@@ -185,7 +219,7 @@
   <div id="detail-website" class="detail-section hidden scroll-mt-36 md:scroll-mt-24">
     <h2 class="text-3xl font-semibold mb-4">This Website</h2>
     <p>  
-    <p>Congratulations, you are the <span id="unique">(Loading...)</span> unique visitor in the last 30 days!</p>
+    <p>Congratulations, you are one of <span id="unique">(Loading...)</span> unique visitors in the last 30 days!</p>
     <p>Over the same time, there has been a total of <span id="views">(Loading...)</span> reloads on this page.</p>
 
   </div>
@@ -385,41 +419,8 @@ function showDetail(targetId) {
   }
 }
 </script>
-<!-- View count script -->
-<script>
-fetch("https://viewcount.rileybolton6.workers.dev/")
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById("views").textContent = data.last30Days;
-  });
-</script>
-<!-- Visitor ID and unique count script -->
-<script>
-function getVisitorId() {
-  let uid = localStorage.getItem("visitor_id");
-  if (!uid) {
-    uid = crypto.randomUUID();  // modern browsers support this
-    localStorage.setItem("visitor_id", uid);
-  }
-  return uid;
-}
 
-const visitorId = getVisitorId();
 
-fetch("https://viewcount.rileybolton6.workers.dev/?uid=" + visitorId)
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById("views").textContent = data.last30Days;
-    document.getElementById("unique").textContent = data.last30DaysUnique;
-  })
-  .catch(err => console.error("Worker fetch error:", err));
-</script>
-<!-- Cloudflare Web Analytics -->
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-  data-cf-beacon='{"token": "b294f565a4b64185bb6f37f27d41c7ff"}'>
-</script>
-<!-- Tailwind CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
 
 </body>
 </html>
