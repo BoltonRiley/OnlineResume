@@ -107,97 +107,79 @@
 
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-semibold mb-4">My Journey</h2>
-    <!-- SLIDER WRAPPER -->
-    <div class="relative">
-
-      <!-- LEFT ARROW -->
-      <button
-        id="slider-left"
-        class="absolute left-2 top-1/2 -translate-y-1/2
-               bg-gray-800 text-white p-2 rounded-full
-               shadow hover:bg-gray-700 z-20"
-        aria-label="Scroll left">
-        &#10094;
-      </button>
-
-      <!-- RIGHT ARROW -->
-      <button
-        id="slider-right"
-        class="absolute right-2 top-1/2 -translate-y-1/2
-               bg-gray-800 text-white p-2 rounded-full
-               shadow hover:bg-gray-700 z-20"
-        aria-label="Scroll right">
-        &#10095;
-      </button>
-
+      <div>
       <!-- SLIDER TRACK -->
       <div
         id="portfolio-track"
         class="flex gap-8 overflow-x-auto scroll-smooth w-full py-4 px-12">
-
-        <!-- Power BI -->
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px]
+                <!-- Coffee -->
+        <div class="min-w-[250px] sm:min-w-[300px] md:min-w-[300px]
                     bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/PowerBI.jpg" class="rounded mb-4" />
-          <h3 class="text-xl font-bold mb-2">PowerBI</h3>
-          <p>
-            I built a comprehensive Power BI dashboard to assist in sales reporting and analysis at Marvel Stadium.
-            <button class="text-blue-600 hover:underline" onclick="showDetail('detail-powerbi')">More</button>
-          </p>
-        </div>
-
-        <!-- Website -->
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px]
-                    bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/website.jpg" class="rounded mb-4" />
-          <h3 class="text-xl font-bold mb-2">This Web Page</h3>
-          <p>
-            To improve my web development skills, I built this website from scratch using HTML, CSS, and JavaScript.
-            <button class="text-blue-600 hover:underline" onclick="showDetail('detail-website')">More</button>
-          </p>
-        </div>
-
-        <!-- Coffee -->
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px]
-                    bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/CoffeeShop.jpg" class="rounded mb-4" />
-          <h3 class="text-xl font-bold mb-2">Choo Brew Coffee</h3>
+          <img src="assets/images/Business.png" class="rounded mb-4" />
+          <h3 class="text-xl font-bold mb-2">Business</h3>
           <p>
             I started and sold a small coffee shop, improving my understanding of business.
             <button class="text-blue-600 hover:underline" onclick="showDetail('detail-coffee')">More</button>
           </p>
         </div>
 
-        <!-- POS -->
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px]
+
+        <!-- Website -->
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[300px]
                     bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/EFTPOS Automation.png" class="rounded mb-4" />
-          <h3 class="text-xl font-bold mb-2">POS Improvements</h3>
+          <img src="assets/images/WebDev.png" class="rounded mb-4" />
+          <h3 class="text-xl font-bold mb-2">Web Application Development</h3>
           <p>
-            Improved POS infrastructure at Marvel Stadium.
+            To improve my web development skills, I built this website from scratch using HTML, CSS, and JavaScript.
+            <button class="text-blue-600 hover:underline" onclick="showDetail('detail-website')">More</button>
+          </p>
+        </div>
+
+        <!-- POS -->
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[300px]
+                    bg-gray-100 rounded-lg shadow p-4">
+          <img src="assets/images/Efficiencies.png" class="rounded mb-4" />
+          <h3 class="text-xl font-bold mb-2">Efficiencies</h3>
+          <p>
+            Improved POS infrastructure and processes at Marvel Stadium.
             <button class="text-blue-600 hover:underline" onclick="showDetail('detail-pos')">More</button>
           </p>
         </div>
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px]
+
+                <!-- Sports -->
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[300px]
                     bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/Sports.jpg" class="rounded mb-4" />
+          <img src="assets/images/Sports.png" class="rounded mb-4" />
           <h3 class="text-xl font-bold mb-2">Sports</h3>
           <p>
             I play basketball and go to the gym regularly. Keeping fit helps me center myself and stay energised.
             <button class="text-blue-600 hover:underline" onclick="showDetail('detail-sports')">More</button>
           </p>
         </div>
-        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] bg-gray-100 rounded-lg shadow p-4">
-          <img src="assets/images/Travel.jpg" class="rounded mb-4" />
+
+                <!-- Power BI -->
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[300px]
+                    bg-gray-100 rounded-lg shadow p-4">
+          <img src="assets/images/DataAnalytics.png" class="rounded mb-4" />
+          <h3 class="text-xl font-bold mb-2">Data Analytics</h3>
+          <p>
+            I built a comprehensive Power BI dashboard to assist in sales reporting and analysis at Marvel Stadium.
+            <button class="text-blue-600 hover:underline" onclick="showDetail('detail-powerbi')">More</button>
+          </p>
+        </div>
+
+        <!-- Travel -->
+        <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[300px] bg-gray-100 rounded-lg shadow p-4">
+          <img src="assets/images/Travel.png" class="rounded mb-4" />
           <h3 class="text-xl font-bold mb-2">Travel</h3>
           <p>
             I adore traveling. New cultures and experiences are such a thrill.
             <button class="text-blue-600 hover:underline" onclick="showDetail('detail-travel')">More</button>
           </p>
         </div>
-            <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[400px]
+            <div class="min-w-[300px] sm:min-w-[350px] md:min-w-[300px]
                     bg-gray-100 rounded-lg shadow p-4">
-        <img src="assets/images/Games.jpg" class="rounded mb-4" />
+        <img src="assets/images/Games.png" class="rounded mb-4" />
         <h3 class="text-xl font-bold mb-2">Games</h3>
         <p>
           Board games and video games offer a great way to unwind. Having friends over to play party games is one of my favorite ways to relax.
@@ -219,14 +201,16 @@
   <div id="detail-website" class="detail-section hidden">
     <h2 class="text-3xl font-semibold mb-4">This Website</h2>
     <p>Building this website has been a fun project to develop my skills outside of work. I built it from scratch, purchasing the domain and learnt the languages HTML and JS to produce the page. I initially hosted the site on my home device, but eventually caved and moved it to a Github page. Tailwind adds the styling framework, whilst Cloudflare is used to provide the DNS and workers. I also use Open AI's gpt-4.0-mini LLM to generate user responses based on the content in the rest of the website.</p>  
-    <p>Congratulations, you are one of <span id="unique">(Loading...)</span> unique visitors in the last 30 days!</p>
-    <p>Over the same time, there has been a total of <span id="views">(Loading...)</span> reloads on this page.</p>
+    <p>Congratulations, you are one of <strong><span id="unique"></span> unique visitors </strong>in the last <strong>30 days!</strong></p>
+    <p>Over the same time, there has been a total of <strong><span id="views"></span> reloads</strong> on this page.</p>
 
   </div>
 
   <div id="detail-coffee" class="detail-section hidden">
     <h2 class="text-3xl font-semibold mb-4">Choo Brew Coffee</h2>
-    <p>Content here</p>
+    <p>Whilst completing my Business Degree at RMIT, I wanted to start a small business. I settled on a coffee shop, as it was something I understood. The price to enter is low if you start on a smaller scale and there is always a market.</p>
+    <p>I set up my sole trader ABN and leased a space on Essendon Station as a convenient location for workers to grab a coffee on their way to work. I sourced a coffee machine and beans from a local supplier and eventually had a staff member assist me when I was studying or couldn't opperate the shop myself.</p>
+    <p>Eventually I sold the business as I didn't see a long term vision in the space, but made a solid profit and have kept the lessons and the ABN tucked away in case I decide to start a new venture down the line.</p>
   </div>
 
   <div id="detail-pos" class="detail-section hidden">
@@ -337,8 +321,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.getElementById("portfolio-track");
-  const leftBtn = document.getElementById("slider-left");
-  const rightBtn = document.getElementById("slider-right");
+
 
   if (!slider || !leftBtn || !rightBtn) return;
 
@@ -353,34 +336,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // and normalize to slider.getBoundingClientRect().left instead.
     return cards.map(card => card.offsetLeft);
   }
-
-  function scrollToX(x) {
-    slider.scrollTo({ left: x, behavior: "smooth" });
-  }
-
-  function getNextPosition() {
-    const positions = getPositions();
-    const current = slider.scrollLeft;
-    // Find first card strictly to the right of current
-    const next = positions.find(p => p > current + 1); // +1 tolerance for float rounding
-    return (next !== undefined) ? next : 0; // wrap to start
-  }
-
-  function getPrevPosition() {
-    const positions = getPositions();
-    const current = slider.scrollLeft;
-    // Find last card strictly to the left of current
-    const prev = [...positions].reverse().find(p => p < current - 1);
-    return (prev !== undefined) ? prev : positions[positions.length - 1]; // wrap to end
-  }
-
-  rightBtn.addEventListener("click", () => {
-    scrollToX(getNextPosition());
-  });
-
-  leftBtn.addEventListener("click", () => {
-    scrollToX(getPrevPosition());
-  });
 });
 </script>
 
