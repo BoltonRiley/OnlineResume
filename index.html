@@ -301,12 +301,12 @@
     <div
       id="certification-track"
       class="flex gap-8 overflow-x-auto scroll-smooth w-full py-4 px-12">
-      <div class="w-[600px] bg-gray-100 rounded-lg shadow p-4">
+      <div class="w-full max-w-[600px] bg-gray-100 rounded-lg shadow p-4">
         <h3 class="text-xl font-bold mb-2">Bachelor of Business</h3>
         <p>Completed in 2021, this degree provided a strong foundation in business principles and management.</p>
         <img src="assets/images/RMIT.jpg" class="rounded mt-4" />
       </div>
-      <div class="w-[600px] bg-gray-100 rounded-lg shadow p-4">
+      <div class="w-full max-w-[600px] bg-gray-100 rounded-lg shadow p-4">
         <h3 class="text-xl font-bold mb-2">Certificate IV in Cybersecurity</h3>
         <p>Completed in 2025, this certification provided foundational knowledge in cybersecurity and general technology practices.</p>
         <img src="assets/images/BHI.jpg" class="rounded mt-4" />
@@ -316,28 +316,6 @@
 
 </main>
 
-
-<!-- SLIDER SCRIPT -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.getElementById("portfolio-track");
-
-
-  if (!slider || !leftBtn || !rightBtn) return;
-
-  // If your cards have a class, prefer selecting by that (more robust than .children)
-  const cards = Array.from(slider.children);
-  if (!cards.length) return;
-
-  // Precompute left positions of each card relative to the slider
-  function getPositions() {
-    // offsetLeft is relative to offsetParent; for typical horizontal carousels this is fine.
-    // If you have nested offset contexts, you can use element.getBoundingClientRect()
-    // and normalize to slider.getBoundingClientRect().left instead.
-    return cards.map(card => card.offsetLeft);
-  }
-});
-</script>
 
 <!-- AI Question Script -->
 <script>
@@ -371,21 +349,30 @@ document.getElementById("askButton").addEventListener("click", async () => {
 function showDetail(targetId) {
   const detailContainer = document.getElementById("detail-content");
   const detailSections = document.querySelectorAll(".detail-section");
+  const journeySection = document.getElementById("My Journey");
 
-  if (!detailContainer) return;
+  if (!detailContainer || !journeySection) return;
 
-  // Show the container
+  // Show the detail container
   detailContainer.classList.remove("hidden");
 
-  // Hide all sections
+  // Hide all detail sections
   detailSections.forEach(section => {
     section.classList.add("hidden");
   });
 
-  // Show the selected section
+  // Show selected section
   const target = document.getElementById(targetId);
   if (target) {
     target.classList.remove("hidden");
+
+    // Smooth scroll so My Journey is at top
+    setTimeout(() => {
+      journeySection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 50);
   }
 }
 </script>
